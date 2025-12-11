@@ -20,9 +20,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import mx.edu.utez.gps.ui.gallery.GalleryScreen
-import mx.edu.utez.gps.ui.map.MapScreen
-import mx.edu.utez.gps.ui.tracking.TrackingScreen
+
 // 1. Definimos las rutas de las pestañas
 sealed class Screen(val route: String, val label: String, val icon: ImageVector) {
     object Tracking : Screen("tracking", "Grabar", Icons.Default.LocationOn)
