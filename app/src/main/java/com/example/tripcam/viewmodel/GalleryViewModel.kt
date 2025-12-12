@@ -3,13 +3,15 @@ package com.example.tripcam.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.tripcam.data.db.Trip
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
-
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
 class GalleryViewModel(application: Application) : AndroidViewModel(application) {
     private val repository = TripRepository(application)
+
+    // Flujo de datos que observa la base de datos
     val completedTrips: StateFlow<List<Trip>> =
         repository.getAllCompletedTrips()
             .stateIn(
@@ -18,4 +20,11 @@ class GalleryViewModel(application: Application) : AndroidViewModel(application)
                 emptyList()
             )
 
+    // --- NUEVA FUNCIÓN PARA ELIMINAR ---
+    // Esta función será llamada desde la UI cuando se presione "Eliminar"
+    fun deleteTrip(trip: Trip) {
+        viewModelScope.launch {
+            repository.deleteTrip(trip.id)
+        }
+    }
 }
