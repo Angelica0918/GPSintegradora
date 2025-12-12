@@ -51,7 +51,7 @@ Este proyecto ha sido desarrollado siguiendo estrictamente los lineamientos de l
 
 | Pantalla de Inicio | Operación CRUD | Uso del Sensor |
 | :---: | :---: | :---: |
-| ![Inicio](Captrura1.jpg) | ![CRUD](Captura3.jpg) | ![Sensor](Captura2.jpg) |
+| ![Inicio](Captura1.jpg) | ![CRUD](Captura3.jpg) | ![Sensor](Captura2.jpg) |
 
 ---
 
