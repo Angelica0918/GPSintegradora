@@ -4,9 +4,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    private const val BASE_URL = "http://192.168.1.XXX:8000/" // <-- ¡ACTUALIZA TU IP AQUÍ!
+    // ¡¡¡IMPORTANTE: PEGA AQUÍ TU URL MOCKAPI!!!
+    // Debe terminar en diagonal '/'
+    private const val BASE_URL = "https://693bc40db762a4f15c3e32be.mockapi.io/"
 
-    val api: GpsApiService by lazy {
+    val apiService: GpsApiService by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())

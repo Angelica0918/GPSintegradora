@@ -1,6 +1,8 @@
 package com.example.tripcam.data.db
+
 import androidx.room.Entity
 import androidx.room.ForeignKey
+
 @Entity(
     tableName = "location_points",
     primaryKeys = ["tripId", "timestamp"], // Clave única

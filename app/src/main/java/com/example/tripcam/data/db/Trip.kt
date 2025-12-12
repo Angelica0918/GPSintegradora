@@ -2,11 +2,19 @@ package com.example.tripcam.data.db
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+
 @Entity(tableName = "trips")
 data class Trip(
     @PrimaryKey(autoGenerate = true)
-    val id: Long = 0,
+    // CAMBIO IMPORTANTE: 'var' en lugar de 'val'
+    // Esto permite que Retrofit asigne el ID que viene del servidor (MockAPI)
+    var id: Long = 0,
+
     val startTime: Long = System.currentTimeMillis(),
     var endTime: Long? = null,
-    var photoUri: String? = null // Guardamos la URI de la foto como String
+    var photoUri: String? = null,
+    var title: String = "Sin Título",
+
+    // Campo de distancia (Punto 2)
+    var distance: Double = 0.0
 )

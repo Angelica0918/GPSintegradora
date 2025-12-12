@@ -1,37 +1,40 @@
 package com.example.tripcam.data.network
-
-import com.example.tripcam.data.model.RutaGPS
-import okhttp3.MultipartBody
-import okhttp3.RequestBody
+import com.example.tripcam.data.db.LocationPoint
+import com.example.tripcam.data.db.Trip
+import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
-import retrofit2.http.Multipart
 import retrofit2.http.POST
 import retrofit2.http.PUT
-import retrofit2.http.Part
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface GpsApiService {
-    @GET("rutas")
-    suspend fun getRutas(): List<RutaGPS>
+    // Obtener todos los viajes
+    @GET("trips")
+    suspend fun getAllTrips(): List<Trip>
 
-    @Multipart
-    @POST("rutas")
-    suspend fun createRuta(
-        @Part("nombre") nombre: RequestBody,
-        @Part("inicioTimestamp") inicioTimestamp: RequestBody,
-        @Part image: MultipartBody.Part?
-    ): RutaGPS
+    // Crear viaje nuevo
+    @POST("trips")
+    suspend fun createTrip(@Body trip: Trip): Trip
 
-    @Multipart
-    @PUT("rutas/{id}")
-    suspend fun updateRuta(
-        @Path("id") id: Int,
-        @Part("nombre") nombre: RequestBody,
-        @Part("finTimestamp") finTimestamp: RequestBody,
-        @Part image: MultipartBody.Part?
-    ): RutaGPS
+    // Enviar un punto GPS
+    @POST("points")
+    suspend fun sendLocationPoint(@Body point: LocationPoint)
 
-    @DELETE("rutas/{id}")
-    suspend fun deleteRuta(@Path("id") id: Int)
+    // Obtener puntos de un viaje (Filtro de MockAPI)
+    @GET("points")
+    suspend fun getPointsByTrip(@Query("tripId") tripId: Long): List<LocationPoint>
+
+    // Obtener TODOS los puntos (Para el mapa general)
+    @GET("points")
+    suspend fun getAllPoints(): List<LocationPoint>
+
+    // Actualizar viaje (finalizar)
+    @PUT("trips/{id}")
+    suspend fun updateTrip(@Path("id") id: Long, @Body trip: Trip)
+
+    // Eliminar viaje
+    @DELETE("trips/{id}")
+    suspend fun deleteTrip(@Path("id") id: Long)
 }
