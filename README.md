@@ -11,9 +11,9 @@
 
 | Nombre Completo | Rol / Tareas Principales | Usuario GitHub |
 | :--- | :--- | :--- |
-| [Angelica Tapia Pérez] | [Ej. UI Design, Repositorio] | @Angelica0918 |
-| [Monserrat Torres Morales] | [Ej. Backend, Retrofit] | @Monserrattorress |
-| [Fernando Rodolfo Martinez Martinez] | [Ej. Sensores, Lógica] | @Fernando-825 |
+| [Angelica Tapia Pérez] | [ UI Design, Lógica] | @Angelica0918 |
+| [Monserrat Torres Morales] | [ Sensores, Lógica, (moka.apy)] | @Monserrattorress |
+| [Fernando Rodolfo Martinez Martinez] | [Retrofit, Backend] | @Fernando-825 |
 
 ---
 
