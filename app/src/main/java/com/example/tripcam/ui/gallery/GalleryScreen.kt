@@ -50,6 +50,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import com.example.tripcam.viewmodel.GalleryViewModel
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
