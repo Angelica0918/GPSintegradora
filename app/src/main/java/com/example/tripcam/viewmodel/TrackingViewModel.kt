@@ -6,7 +6,6 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.tripcam.data.db.LocationPoint
 import com.example.tripcam.data.location.LocationClient
-import com.example.tripcam.data.repository.TripRepository
 import com.google.android.gms.location.LocationServices
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
